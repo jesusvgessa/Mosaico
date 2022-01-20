@@ -12,7 +12,7 @@ function crearEvento(elemento, evento, mifuncion) {
     elemento.addEventListener(evento, mifuncion);
 }
 
-/* FUNCION */
+/* FUNCIONES */
 crearEvento(window, "load", iniciar);
 crearEvento(window, "load", panelSeleccionado);
 crearEvento(window, "load", mensajeDibujar);
@@ -41,9 +41,6 @@ function iniciar() {
     zonaDibujo.appendChild(tableroDibujo);
 }
 
-/* FUNCION */
-
-
 function panelSeleccionado() {
     var coloresPaleta = document.querySelectorAll("#paleta td");
     coloresPaleta.forEach(elemento => crearEvento(elemento, "click", cambiarPanel));
@@ -59,11 +56,7 @@ function panelSeleccionado() {
     }
 }
 
-/* FUNCION */
-
-
 function mensajeDibujar() {
-
     crearEvento(getId("tablerodibujo"), "click", cambiarMensaje);
 
     function cambiarMensaje() {
@@ -76,9 +69,6 @@ function mensajeDibujar() {
     }
 }
 
-/* FUNCION */
-
-
 function dibujar(){
     var celdas = document.querySelectorAll("#tablerodibujo td");
     celdas.forEach(celda => crearEvento(celda,"mouseover",pintando));
@@ -89,4 +79,3 @@ function dibujar(){
         }
     }
 }
-
