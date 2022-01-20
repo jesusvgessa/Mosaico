@@ -81,10 +81,8 @@ function mensajeDibujar() {
 
 function dibujar(){
     var celdas = document.querySelectorAll("#tablerodibujo td");
-    for(var i=0;i<celdas.length;i++){
-        crearEvento(celdas[i],"mouseover",pintando);
-    }
-    
+    celdas.forEach(celda => crearEvento(celda,"mouseover",pintando));
+
     function pintando(){
         if(pintaActivo){
             this.setAttribute("class",colorActivo);
